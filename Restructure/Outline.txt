@@ -1,0 +1,28 @@
+Start:
+
+Menu_DisplayTitleScreen
+Menu_DisplayHiScores
+Menu_DemoMode
+
+If F1: Menu_DisplayInstructions, then return to Menu_DisplayTitleScreen
+If Space: 
+
+Menu_SelectControls
+Level_InitialiseGame
+Level_GetReady
+Level_GameLoop
+
+
+If level complete: Level_Complete, then return to Level_GetReady
+If princess rescued: Quasi_RescueEsmerelda, then continue game
+
+
+If life lost:
+Level_LifeLost, then back to Level_GetReady (if lives remaining)
+
+If all lives lost: Player_GameOver
+
+If hi-score: Player_EnterHiScoreName
+
+Then return to Menu_DisplayTitleScreen
+
